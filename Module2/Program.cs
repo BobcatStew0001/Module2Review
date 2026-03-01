@@ -48,6 +48,31 @@ foreach (var student in students) //Here is step 8. I choose the foreach because
     Console.WriteLine();
 }
 
+var course = new Course
+{
+    CourseName = "Advanced C# Programming",
+    CourseCode = "CSharp 71"
+};
 
+course.EnrollStudent(zach);
+course.EnrollStudent(john);
+course.EnrollStudent(frank);
+course.EnrollStudent(tom);
+course.EnrollStudent(joey);
+
+// Making sure it picks up the same names 
+course.EnrollStudent(zach);
+course.EnrollStudent(frank);
+
+Console.WriteLine("--- Course Information ---");
+Console.WriteLine($"Course Name: {course.CourseName}");
+Console.WriteLine($"Course Code: {course.CourseCode}");
+Console.WriteLine();
+Console.WriteLine("Enrolled Students:");
+
+foreach (var student in course.EnrolledStudents)
+{
+    Console.WriteLine($"- {student.Name} (ID: {student.ID})");
+}
 
 //Committed and pushed to GitHub so save my work 
